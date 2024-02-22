@@ -1,0 +1,69 @@
+.signup-main{
+    border: 1px black solid;
+
+    height: 85vh;
+    width: 70vw;
+    margin-top: 8vh;
+    margin-left: 15vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.signup-details{
+    display: flex;
+    flex-direction: column;
+    width: 43vw;
+    padding-left: 2vw;
+}
+.google-logo{
+    margin-top: 2vh;
+    width: 8vw;
+    height: 15vh;
+    background-image: url(https://i.pinimg.com/736x/9f/a3/60/9fa360c5a928043d90aeb2400fc6ce18.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.signup-input-fields{
+    margin-top:3vh;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+.signup-fname-ip,.signup-lname-ip,.signup-pass-ip,.signup-pass-confirm-ip{
+    height: 5vh;
+    width: 15vw;
+}
+.signup-username-ip{
+    margin-top: 3vh;
+    height: 5vh;
+    width: 33.5vw;
+    
+
+}
+.signup-pass-main{
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    margin-top: 10vh;
+}
+.signup-show-pass{
+    margin-top: 3vh;
+}
+.signup-low-text{
+    margin-top: 5vh;
+}
+.signup-lower{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    gap:24vw; 
+}
+.signup-animation{
+    display: flex;
+    flex-direction: column;
+
+}
+.signup-anim-image{
+    height: 45vh;
+    margin-top: 10vh;
+}

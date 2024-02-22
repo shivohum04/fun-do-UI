@@ -1,0 +1,38 @@
+.signin-main{
+  height: 75vh;
+  width: 35vw;
+  border-radius: 5px;
+  display: flex;
+  border: 1px solid grey;
+  flex-direction: column;
+  gap: 4vh;
+  margin-top: 10vh;
+  margin-left: 33vw;
+  align-items: center;
+  padding-bottom: 5vh;
+
+}
+
+.signin-forgot{
+  margin-right:13vw;
+}
+.signin-lower{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  width: 100%;
+  gap: 12vw;
+}
+.username-box,.password-box{
+  width: 22vw;
+  height: 6.5vh;
+}
+.signin-google{
+  background-image: url(https://i.pinimg.com/736x/9f/a3/60/9fa360c5a928043d90aeb2400fc6ce18.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: yellowgreen;
+  height: 15vh;
+  width: 10vw;
+}
