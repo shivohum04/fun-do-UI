@@ -1,6 +1,5 @@
 .signup-main{
     border: 1px black solid;
-
     height: 85vh;
     width: 70vw;
     margin-top: 8vh;
@@ -66,4 +65,25 @@
 .signup-anim-image{
     height: 45vh;
     margin-top: 10vh;
+}
+@media (max-width: 500px){
+    .signup-animation{
+        background-color: yellowgreen;
+        display: none;
+    }
+    .signup-main{
+        border: none;
+    }
+    .signup-input-fields{
+        display: flex;
+        flex-direction: column;
+    }
+    .signup-pass-main{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2vh;
+    }
+    .signup-pass-confirm-ip,.signup-pass-ip,.signup-fname-ip,.signup-lname-ip,.signup-username-ip{
+        width: 60vw;
+    }
 }
