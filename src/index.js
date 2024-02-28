@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Signin from './components/signin.js';
 import Signup from './components/signup.js';
-import SearchAppBar from './components/navbar.js';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material/styles';
 import {myTheme} from './components/theme.js';
@@ -18,7 +17,7 @@ import Dashboard from './components/dashboard.js';
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<Dashboard/>
+    element:<Signup/>
   },  
   {
     path:'/signin',

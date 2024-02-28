@@ -25,9 +25,9 @@ function Signup() {
         console.log(typeof password);
         console.log(typeof service);
 
-        const requestURL = process.env.REACT_APP_BACKEND_URL;
+        const requestSignUpURL = process.env.REACT_APP_BACKEND_Signup_URL;
 
-        axios.post(requestURL, data)
+        axios.post(requestSignUpURL, data)
             .then(function (response) {
                 console.log(response);
             })

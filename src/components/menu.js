@@ -5,15 +5,21 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import EditIcon from '@mui/icons-material/Edit';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Typography from '@mui/material/Typography';
 
-
-export default function TemporaryDrawer({ open, toggleDrawer }) {
+export default function TemporaryDrawer({ open, toggleDrawer, onComponentChange }) {
   const drawerWidthOpen = 250;
-  const drawerWidthClosed = 57; // Adjust as needed to fit icons
+  const drawerWidthClosed = 57; 
+
+  const handleListItemClick = (componentName) => () => {
+    onComponentChange(componentName);
+    toggleDrawer(!open)();
+  };
 
   const DrawerList = (
     <Box
@@ -34,14 +40,19 @@ export default function TemporaryDrawer({ open, toggleDrawer }) {
       onClick={toggleDrawer(!open)}
     >
       <List>
-        {['notes', 'reminders', 'edit labels', 'archive', 'trash'].map((text, index) => (
+        {['Notes', 'Reminders', 'Edit Label', 'Archive', 'Trash'].map((text) => (
           <ListItem key={text} disablePadding sx={{ display: 'flex', justifyContent: 'center' }}>
-            <ListItemButton>
+            <ListItemButton onClick={handleListItemClick(text)}>
               <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                
+                {text === 'Notes' && <LightbulbIcon />}
+                {text === 'Reminders' && <NotificationsIcon />}
+                {text === 'Edit Label' && <EditIcon />}
+                {text === 'Archive' && <ArchiveIcon />}
+                {text === 'Trash' && <DeleteIcon />}
               </ListItemIcon>
-              {open && <ListItemText primary={text} />}
+              <Typography variant="h6" gutterBottom>
+                {text}
+              </Typography>
             </ListItemButton>
           </ListItem>
         ))}
@@ -59,8 +70,8 @@ export default function TemporaryDrawer({ open, toggleDrawer }) {
         '& .MuiDrawer-paper': {
           width: open ? drawerWidthOpen : drawerWidthClosed,
           boxSizing: 'border-box',
-          marginTop: '9vh', // Add top margin
-          height: '100vh', // Adjust height to take the top margin into account
+          marginTop: '9vh',
+          height: '100vh',
         },
       }}
     >

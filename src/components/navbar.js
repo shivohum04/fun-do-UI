@@ -49,7 +49,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -123,38 +122,22 @@ export default function PrimarySearchAppBar({ toggleDrawer }) {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <RefreshIcon/>
+        <p>refresh</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-          
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        <ViewStreamOutlinedIcon/>
+        <p>View</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+      <MenuItem>
+        <AppsIcon/>
+        <p>Apps</p>
       </MenuItem>
+      <MenuItem>
+        <SettingsIcon/>
+        <p>settings</p>
+      </MenuItem>
+      
     </Menu>
   );
 
@@ -191,10 +174,19 @@ export default function PrimarySearchAppBar({ toggleDrawer }) {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-           <RefreshIcon/>
-           <ViewStreamOutlinedIcon/>
-           <SettingsIcon/>
-           <AppsIcon/>
+            <IconButton>
+              <RefreshIcon/>
+            </IconButton>
+           <IconButton>
+            <ViewStreamOutlinedIcon/>
+           </IconButton>
+           <IconButton>
+            <SettingsIcon/>
+           </IconButton>
+           <IconButton>
+            <AppsIcon/>
+           </IconButton>
+           
          
             <IconButton
               size="large"
