@@ -42,12 +42,14 @@
   .text-open-upper{
     display: flex;
     flex-direction: row;
-    gap:15vw
+    gap:25vw
 
   }
   .text-open-lower{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 2vw;
 
   }
   .text-open-main{
@@ -59,3 +61,30 @@
     padding: 20px;
     border-radius: 5px;
   }
+.note-grid-main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: fit-content;
+    height: fit-content;
+    gap: 1vw;
+}
+.note-card-main{
+    width: fit-content;
+    height: fit-content;
+    min-height: 20vh;
+    min-width: 10vw;
+    border-radius: 5px;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.note-card-title{
+  height: 2vh;
+  width: auto;
+}
+.note-card-content{
+  width: fit-content;
+  height: fit-content;
+}
