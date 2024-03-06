@@ -1,38 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import './styles/note-text.css';
-import Notedisplaycard from './notedisplaycard';
-import axios from 'axios';
-export default function Displaynotegrid() {
+import NoteDisplayCard from './notedisplaycard'
+import { getNotes } from '../services/notesService'; // Adjust the path as necessary
 
-  const requestGetNotesURL = "https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList"
+export default function DisplayNoteGrid() {
+    const [notes, setNotes] = useState([]); // State to store the notes
 
-      axios.get(requestGetNotesURL)
-          .then(function (response) {
-              console.log(response);
-              
-          })
-          .catch(function (error) {
-              console.log(error);
-              alert('wrong email or password')
-              
-          });
-  return (
-    <div className='note-grid-main'>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        <Notedisplaycard/>
-        
+    useEffect(() => {
+        // Define an async function to fetch the notes
+        const fetchNotes = async () => {
+            try {
+                const fetchedNotes = await getNotes(); // Attempt to fetch the notes
+                if (fetchedNotes && Array.isArray(fetchedNotes)) {
+                    setNotes(fetchedNotes); // Update the state with the fetched notes
+                }
+            } catch (error) {
+                console.error("Failed to fetch notes", error);
+            }
+        };
 
-    </div>
-  )
+        fetchNotes(); // Call the fetch function
+    }, []); // Empty dependency array means this effect runs once on component mount
+
+    return (
+        <div className='note-grid-main'>
+            {notes.map((note) => (
+                // Assuming each note has a unique identifier as `id`
+                <NoteDisplayCard key={note.id} title={note.title} content={note.description} />
+            ))}
+        </div>
+    );
 }

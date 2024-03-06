@@ -17,22 +17,23 @@ function Signin() {
       alert("Please fill all fields.");
       return;
     }
-      const data = { username, password };
-      console.log(data);
-      
+      const cred = { username, password };
+      console.log(cred);
 
       const requestSignInURL = "https://fundoonotes.incubation.bridgelabz.com/api/user/login"
 
-      axios.post(requestSignInURL, data)
+      axios.post(requestSignInURL, cred)
           .then(function (response) {
               console.log(response);
               navigate('/dashboard');
-              
+              const data = response.data;
+              console.log(data)
+              console.log(data.id)
+              window.localStorage.setItem("token", data.id); 
           })
           .catch(function (error) {
               console.log(error);
               alert('wrong email or password')
-              
           });
   };
 
