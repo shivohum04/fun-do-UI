@@ -24,9 +24,8 @@
 .lower-icon-main{
     display: flex;
     flex-direction: row;
-    gap: 1vw;
-    width: 20vw;
-    height: 10vh;
+    width: fit-content;
+    height: fit-content;
     
 }
 .expanding-textarea {

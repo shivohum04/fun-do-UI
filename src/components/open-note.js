@@ -36,6 +36,7 @@ const ExpandingTextArea = () => {
             const response = await addNotes(noteObj);
             console.log(response); 
             alert('new note added successfully')
+            onNoteAdded();
         } catch (error) {
             console.error("Failed to add the note", error);
             // Handle UI error feedback here
